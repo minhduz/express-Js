@@ -10,6 +10,17 @@ var toysRouter = require("./routes/toys");
 
 var app = express();
 
+var mongoose = require("mongoose");
+const e = require("express");
+
+var url = "mongodb://localhost:27017/";
+var url_could =
+  "mongodb+srv://ducnmgch210774:j.C7z$rHAq%40uSUX@cluster0.dr4hz0i.mongodb.net/";
+mongoose
+  .connect(url_could)
+  .then(() => console.log("Connect to DB success"))
+  .catch((err) => console.log("Fail to connect to DB " + err));
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
